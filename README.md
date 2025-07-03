@@ -105,7 +105,7 @@ spring.web.cors.allowed-methods=GET,POST,PUT,DELETE,OPTIONS
 ## 👥 Equipe
 
 - [Dauda Sanhá](https://github.com/Daudasanha)
-- Adalbino Caúncra Gomes Fernandes
+- [Adalbino Caúncra Gomes Fernandes](https://github.com/Adalby23)
 
 ---
 
