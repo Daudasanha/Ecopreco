@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Definição do charset para suporte a caracteres especiais -->
+    <meta charset="UTF-8">
+    <!-- Responsivo para dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página que aparece na aba do navegador -->
+    <title>Painel Administrativo - EcoPreço</title>
+    <!-- Link para arquivo CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Script para proteger o acesso à página (ex: verificar login/admin) -->
+    <script src="js/adminGuard.js"></script>
+
+    <header>
+        <div class="container">
+            <!-- Logo ou nome clicável que leva para a página inicial -->
+            <h1><a href="index.html">EcoPreço</a></h1>
+            <nav>
+                <ul class="nav-links">
+                    <!-- Links principais de navegação do site -->
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="comparacao.html">Comparar Produtos</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <!-- Espaço para mostrar mensagem de boas-vindas ao admin -->
+                <span id="welcome-admin" style="margin-right: 15px;"></span>
+                <!-- Botão para realizar logout -->
+                <button id="logout-btn" class="btn-secondary">Sair</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Título principal do painel administrativo -->
+            <h2>Painel Administrativo</h2>
+            <!-- Texto explicativo sobre o painel -->
+            <p>Bem-vindo ao painel de controle. Aqui você pode gerenciar produtos, usuários e avaliações.</p>
+
+            <!-- Área para exibir mensagens ao usuário (sucesso, erro etc.) -->
+            <div id="message" class="message" style="display: none;"></div>
+
+            <!-- Seção para gerenciamento de produtos -->
+            <section id="product-management">
+                <h3>Gerenciar Produtos</h3>
+                <!-- Botão para abrir formulário de adicionar novo produto -->
+                <button id="add-product-btn" class="btn-primary">Adicionar Novo Produto</button>
+                <!-- Container do formulário de adicionar/editar produto, inicialmente escondido -->
+                <div id="product-form-container" style="display: none;" class="form-container">
+                    <h4 id="product-form-title">Adicionar Produto</h4>
+                    <form id="product-form">
+                        <!-- Campo oculto para armazenar o ID do produto ao editar -->
+                        <input type="hidden" id="product-id">
+                        
+                        <!-- Campos do formulário para os detalhes do produto -->
+                        <div class="form-group">
+                            <label for="product-name">Nome:</label>
+                            <input type="text" id="product-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-description">Descrição:</label>
+                            <textarea id="product-description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-price">Preço Atual:</label>
+                            <input type="number" id="product-price" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-brand">Marca:</label>
+                            <input type="text" id="product-brand">
+                        </div>
+                        <div class="form-group">
+                            <label for="product-category">Categoria:</label>
+                            <input type="text" id="product-category">
+                        </div>
+                        <div class="form-group">
+                            <label for="product-ecolabel">Selo Ecológico:</label>
+                            <input type="text" id="product-ecolabel">
+                        </div>
+                        <div class="form-group">
+                            <label for="product-url">URL do Produto:</label>
+                            <input type="url" id="product-url">
+                        </div>
+                        <div class="form-group">
+                            <label for="product-image-url">URL da Imagem:</label>
+                            <input type="url" id="product-image-url">
+                        </div>
+                        <div class="form-group">
+                            <label for="product-store">Loja:</label>
+                            <input type="text" id="product-store">
+                        </div>
+                        <div class="form-group">
+                            <label for="product-sustainability-info">Informações Sustentáveis:</label>
+                            <textarea id="product-sustainability-info"></textarea>
+                        </div>
+
+                        <!-- Botões para salvar ou cancelar a ação no formulário -->
+                        <div class="form-group">
+                            <button type="submit" id="save-product-btn">Salvar Produto</button>
+                            
+                            <button type="button" id="cancel-product-btn" class="btn-secondary">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Tabela para listar os produtos já cadastrados -->
+                <h4>Lista de Produtos</h4>
+                <table id="product-table" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Preço</th>
+                            <th>Marca</th>
+                            <th>Categoria</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Linhas de produtos serão inseridas dinamicamente via JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Seção para gerenciamento de usuários -->
+            <section id="user-management" style="margin-top: 40px;">
+                <h3>Gerenciar Usuários</h3>
+                <h4>Lista de Usuários</h4>
+                <table id="user-table" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Usuário</th>
+                            <th>Email</th>
+                            <th>Nome Completo</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Linhas de usuários serão inseridas dinamicamente via JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Seção para gerenciamento de avaliações -->
+            <section id="review-management" style="margin-top: 40px;">
+                <h3>Gerenciar Avaliações</h3>
+                <h4>Lista de Avaliações</h4>
+                <table id="review-table" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Produto</th>
+                            <th>Usuário</th>
+                            <th>Nota</th>
+                            <th>Comentário</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Linhas de avaliações serão inseridas dinamicamente via JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <!-- Direitos autorais no rodapé -->
+            <p>&copy; 2025 EcoPreço. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Inclusão dos scripts JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/adminGuard.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

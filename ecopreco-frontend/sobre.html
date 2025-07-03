@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - EcoPreço</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos específicos para a página Sobre Nós */
+        .about-us-container {
+            max-width: 960px;
+            margin: 80px auto 40px auto; /* Ajuste para não ficar atrás do header */
+            padding: 20px;
+            background-color: var(--color-light);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-us-container h1 {
+            color: var(--color-primary);
+            margin-bottom: 30px;
+        }
+
+        .developer-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: var(--color-white);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .developer-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--color-secondary);
+        }
+
+        .developer-card h2 {
+            color: var(--color-dark);
+            margin-bottom: 10px;
+        }
+
+        .developer-card p {
+            color: var(--color-text);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .developer-card p strong {
+            color: var(--color-primary);
+        }
+
+        @media (min-width: 768px) {
+            .developer-card {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .developer-card.reverse {
+                flex-direction: row-reverse;
+            }
+
+            .developer-card img {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+
+            .developer-card.reverse img {
+                margin-left: 20px;
+                margin-right: 0;
+            }
+
+            .developer-card div {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">EcoPreço</a></h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-us-container">
+            <h1>Sobre os Desenvolvedores</h1>
+
+            <div class="developer-card">
+                <img src="img/Adalby.jpg" alt="Foto de Adalbino">
+                <div>
+                    <h2>Adalbino Caúncra Fernandes Gomes</h2>
+                    <p>Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> na <strong>Faculdade Municipal de Palhoça</strong>.</p>
+                    <p>Atualmente cursando a <strong>4ª fase</strong>, com foco em desenvolvimento backend e arquitetura de sistemas. Apaixonado por criar soluções eficientes e escaláveis.</p>
+                </div>
+            </div>
+
+            <div class="developer-card reverse">
+                <img src="img/Dauda.jpg" alt="Foto de Dauda">
+                <div>
+                    <h2>Dauda Sanhá</h2>
+                    <p>Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> na <strong>Faculdade Municipal de Palhoça</strong>.</p>
+                    <p>Na <strong>4ª fase</strong>, com grande interesse em design de interface (UI/UX) e desenvolvimento frontend, buscando sempre a melhor experiência para o usuário.</p>
+                </div>
+            </div>
+
+            <p>Este projeto foi desenvolvido como parte dos estudos das disciplina cursadas desde o inicío do curso, visando aplicar conceitos de desenvolvimento de sistemas sustentáveis e práticas de mercado.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 EcoPreço. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+

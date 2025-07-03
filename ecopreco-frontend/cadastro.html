@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
+<head>
+    <meta charset="UTF-8" /> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Responsivo para dispositivos móveis -->
+    <title>Login - EcoPreço</title> <!-- Título da página -->
+    <link rel="stylesheet" href="css/style.css" /> <!-- Link para arquivo CSS externo -->
+</head>
+<body>
+    <!-- Cabeçalho do site -->
+    <header>
+        <div class="container"> <!-- Container para centralizar e limitar largura -->
+            <h1><a href="index.html">EcoPreço</a></h1> <!-- Logo ou nome do site com link para a página inicial -->
+            <nav>
+                <ul class="nav-links"> <!-- Menu de navegação principal -->
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="comparacao.html">Comparar Produtos</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                </ul>
+            </nav>
+            <!-- Botões de autenticação -->
+            <div class="auth-buttons">
+                <button class="btn-login">Login</button> <!-- Botão de login (pode abrir modal ou direcionar) -->
+                <button class="btn-register btn-secondary">Cadastre-se</button> <!-- Botão para cadastro -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        <div class="form-container"> <!-- Container específico para o formulário -->
+            <h2>Login</h2> <!-- Título do formulário -->
+            <div id="message" class="message" style="display: none;"></div> <!-- Área para exibir mensagens de erro/sucesso -->
+            
+            <!-- Formulário de login -->
+            <form id="login-form">
+                <div class="form-group"> <!-- Grupo de campo do formulário -->
+                    <label for="usernameOrEmail">Usuário ou Email:</label> <!-- Label para campo de usuário/email -->
+                    <input type="text" id="usernameOrEmail" name="usernameOrEmail" required /> <!-- Campo de texto obrigatório -->
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha:</label> <!-- Label para campo senha -->
+                    <input type="password" id="password" name="password" required /> <!-- Campo de senha obrigatório -->
+                </div>
+                <div class="form-group">
+                    <button type="submit">Entrar</button> <!-- Botão para enviar o formulário -->
+                </div>
+            </form>
+
+            <!-- Link para página de cadastro -->
+            <div class="text-center">
+                <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <div class="container"> <!-- Container para centralização -->
+            <p>&copy; 2025 EcoPreço. Todos os direitos reservados.</p> <!-- Direitos autorais -->
+        </div>
+    </footer>
+
+    <!-- Inclusão dos scripts JavaScript -->
+    <script src="js/main.js"></script> <!-- Script principal da aplicação -->
+    <script src="js/login.js"></script> <!-- Script específico para funcionalidade de login -->
+</body>
+</html>

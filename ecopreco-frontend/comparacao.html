@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
+<head>
+    <meta charset="UTF-8"> <!-- Codificação de caracteres UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade para dispositivos móveis -->
+    <title>Comparação de Produtos - EcoPreço</title> <!-- Título da página -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Link para arquivo CSS externo -->
+</head>
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <div class="container"> <!-- Container para centralizar e limitar a largura do conteúdo -->
+            <h1><a href="index.html">EcoPreço</a></h1> <!-- Logo/nome do site com link para a página inicial -->
+            <nav>
+                <ul class="nav-links"> <!-- Menu de navegação principal -->
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="comparacao.html">Comparar Produtos</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                </ul>
+            </nav>
+            <!-- Botões para login e cadastro -->
+            <div class="auth-buttons">
+                <button class="btn-login">Login</button>
+                <button class="btn-register btn-secondary">Cadastre-se</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        <div class="container"> <!-- Container para o conteúdo principal -->
+            <h2>Comparação de Produtos</h2> <!-- Título da seção -->
+
+            <!-- Mensagem de feedback para o usuário, inicialmente oculta -->
+            <div id="message" class="message" style="display: none;"></div>
+
+            <!-- Seleção do Produto 1 -->
+            <div class="form-group">
+                <label for="product1-select">Selecione o Produto 1:</label>
+                <select id="product1-select">
+                    <!-- Opções de produtos serão carregadas dinamicamente via JavaScript -->
+                </select>
+            </div>
+
+            <!-- Seleção do Produto 2 -->
+            <div class="form-group">
+                <label for="product2-select">Selecione o Produto 2:</label>
+                <select id="product2-select">
+                    <!-- Opções de produtos serão carregadas dinamicamente via JavaScript -->
+                </select>
+            </div>
+
+            <!-- Botão para iniciar a comparação dos produtos selecionados -->
+            <button class="form-group" id="compare-btn">Comparar</button>
+
+            <!-- Área onde os resultados da comparação serão exibidos, inicialmente oculta -->
+            <div id="comparison-results" style="display: none;">
+                <h3>Resultados da Comparação</h3>
+                <div class="product-comparison-grid">
+                    <!-- Detalhes do Produto 1 -->
+                    <div id="product1-details" class="product-card">
+                        <!-- Conteúdo será inserido via JavaScript -->
+                    </div>
+                    <!-- Detalhes do Produto 2 -->
+                    <div id="product2-details" class="product-card">
+                        <!-- Conteúdo será inserido via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <div class="container"> <!-- Container para centralizar o conteúdo do rodapé -->
+            <p>&copy; 2025 EcoPreço. Todos os direitos reservados.</p> <!-- Direitos autorais -->
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="js/main.js"></script> <!-- Script principal da aplicação -->
+    <script src="js/comparacao.js"></script> <!-- Script específico para funcionalidades da página de comparação -->
+</body>
+</html>

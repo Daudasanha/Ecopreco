@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação de Senha - EcoPreço</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">EcoPreço</a></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="comparacao.html">Comparar Produtos</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn-login">Login</button>
+                <button class="btn-register btn-secondary">Cadastre-se</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Recuperação de Senha</h2>
+            <div id="message" class="message" style="display: none;"></div>
+            <form id="forgot-password-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Enviar Link de Redefinição</button>
+                </div>
+            </form>
+            <div class="text-center">
+                <p><a href="login.html">Voltar para o Login</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 EcoPreço. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/recuperacao-senha.js"></script>
+</body>
+</html>
+

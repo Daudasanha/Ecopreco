@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres para UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade para dispositivos móveis -->
+    <title>EcoPreço - Comparador de Preços Sustentáveis</title> <!-- Título da página exibido na aba do navegador -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Link para o arquivo CSS externo -->
+</head>
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <div class="container"> <!-- Container para centralizar e limitar a largura do conteúdo -->
+            <h1><a href="index.html">EcoPreço</a></h1> <!-- Nome do site com link para a página inicial -->
+            <nav>
+                <ul class="nav-links"> <!-- Menu de navegação principal -->
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="comparacao.html">Comparar Produtos</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                </ul>
+            </nav>
+            <!-- Botões para autenticação -->
+            <div class="auth-buttons">
+                <button class="btn-login">Login</button> <!-- Botão de login -->
+                <button class="btn-register btn-secondary">Cadastre-se</button> <!-- Botão para cadastro -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main class="main-content"> 
+        <!-- Barra lateral com filtros -->
+        <aside class="sidebar">
+            <h3>Filtros</h3> <!-- Título da seção de filtros -->
+            <!-- Campo de pesquisa por texto -->
+            <div class="form-group">
+                <label for="search-input">Pesquisar</label>
+                <input type="text" id="search-input" placeholder="Nome, marca, loja...">
+            </div>
+            <!-- Filtro por categoria -->
+            <div class="form-group">
+                <label for="category-filter">Categoria</label>
+                <select id="category-filter">
+                    <option value="">Todas</option> <!-- Opção padrão para todas as categorias -->
+                    <!-- Categorias serão carregadas dinamicamente via JavaScript -->
+                </select>
+            </div>
+            <!-- Filtro por marca -->
+            <div class="form-group">
+                <label for="brand-filter">Marca</label>
+                <select id="brand-filter">
+                    <option value="">Todas</option> <!-- Opção padrão para todas as marcas -->
+                    <!-- Marcas serão carregadas dinamicamente via JavaScript -->
+                </select>
+            </div>
+            <!-- Filtro por loja -->
+            <div class="form-group">
+                <label for="store-filter">Loja</label>
+                <select id="store-filter">
+                    <option value="">Todas</option> <!-- Opção padrão para todas as lojas -->
+                    <!-- Lojas serão carregadas dinamicamente via JavaScript -->
+                </select>
+            </div>
+            <!-- Filtro por selo ecológico -->
+            <div class="form-group">
+                <label for="eco-label-filter">Selo Ecológico</label>
+                <select id="eco-label-filter">
+                    <option value="">Todos</option> <!-- Opção padrão para todos os selos -->
+                    <!-- Selos ecológicos serão carregados dinamicamente via JavaScript -->
+                </select>
+            </div>
+            <!-- Filtro por preço mínimo -->
+            <div class="form-group">
+                <label for="min-price-filter">Preço Mínimo</label>
+                <input type="number" id="min-price-filter" step="0.01" min="0"> <!-- Entrada numérica com passo de 0.01 e mínimo zero -->
+            </div>
+            <!-- Filtro por preço máximo -->
+            <div class="form-group">
+                <label for="max-price-filter">Preço Máximo</label>
+                <input type="number" id="max-price-filter" step="0.01" min="0"> <!-- Entrada numérica com passo de 0.01 e mínimo zero -->
+            </div>
+            <!-- Filtro por avaliação mínima -->
+            <div class="form-group">
+                <label for="min-rating-filter">Avaliação Mínima</label>
+                <input type="number" id="min-rating-filter" step="0.5" min="0" max="5"> <!-- Entrada numérica para avaliação entre 0 e 5 -->
+            </div>
+            <!-- Botão para aplicar os filtros selecionados -->
+            <button class="form-group" id="apply-filters-btn">Aplicar Filtros</button>
+        </aside>
+
+        <!-- Seção para exibição dos produtos -->
+        <section class="product-grid" id="product-list">
+            <!-- Os produtos serão carregados dinamicamente via JavaScript aqui -->
+        </section>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <div class="container"> <!-- Container para centralizar e limitar largura do conteúdo do rodapé -->
+            <p>&copy; 2025 EcoPreço. Todos os direitos reservados.</p> <!-- Texto de direitos autorais -->
+        </div>
+    </footer>
+
+    <!-- Inclusão dos scripts JavaScript -->
+    <script src="js/main.js"></script> <!-- Script principal da aplicação -->
+    <script src="js/products.js"></script> <!-- Script específico para carregar e manipular produtos -->
+</body>
+</html>
